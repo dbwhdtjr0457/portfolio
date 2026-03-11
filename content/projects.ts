@@ -1,13 +1,5 @@
-import { externalLinks } from "@/content/links";
+import { projectLinksByEntryId } from "@/content/links";
 import type { Project } from "@/content/types";
-
-const byeolsoopLink = externalLinks.find(
-  (link) => link.id === "byeolsoop-github-footer",
-);
-const sleepNowLink = externalLinks.find(
-  (link) => link.id === "sleep-now-github-footer",
-);
-const pongLink = externalLinks.find((link) => link.id === "pong-github-footer");
 
 export const featuredProject: Project = {
   id: "byeolsoop",
@@ -36,7 +28,7 @@ export const featuredProject: Project = {
     "React-Query",
     "Recoil",
   ],
-  links: byeolsoopLink ? [byeolsoopLink] : [],
+  links: projectLinksByEntryId.byeolsoop ? [projectLinksByEntryId.byeolsoop] : [],
   featuredReason:
     "3D UX와 카메라 이동, API 처리 규칙, 상태 설계를 함께 보여줄 수 있어 먼저 소개하는 프로젝트로 선택했습니다.",
 };
@@ -65,7 +57,9 @@ export const otherProjects: Project[] = [
       "Decision Tree",
       "Firebase Firestore",
     ],
-    links: sleepNowLink ? [sleepNowLink] : [],
+    links: projectLinksByEntryId["sleep-now"]
+      ? [projectLinksByEntryId["sleep-now"]]
+      : [],
   },
   {
     id: "pong",
@@ -84,6 +78,6 @@ export const otherProjects: Project[] = [
       "로컬 게임 WebSocket 통신과 게임 계산 로직, 파워업 구현을 맡았습니다.",
     ],
     techStack: ["JavaScript", "Bootstrap", "Three.js", "WebSocket"],
-    links: pongLink ? [pongLink] : [],
+    links: projectLinksByEntryId.pong ? [projectLinksByEntryId.pong] : [],
   },
 ];

@@ -7,6 +7,7 @@ export {
   externalLinks,
   footerLinks,
   introLinks,
+  projectLinksByEntryId,
 } from "@/content/links";
 export { navigationItems } from "@/content/navigation";
 export { featuredProject, otherProjects } from "@/content/projects";
@@ -16,7 +17,6 @@ export {
   projectPreviewMedia,
 } from "@/content/media";
 export { siteMetadata } from "@/content/site-metadata";
-export { siteShellContent } from "@/content/site-shell";
 export { skills } from "@/content/skills";
 export { summaryItems } from "@/content/summary";
 export type {
