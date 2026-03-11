@@ -33,8 +33,8 @@ export function LinksSection() {
                   {item.href && item.value ? (
                     <Link
                       href={item.href}
-                      target={item.href.startsWith("http") ? "_blank" : undefined}
-                      rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                      target={!item.href.startsWith("mailto:") ? "_blank" : undefined}
+                      rel={!item.href.startsWith("mailto:") ? "noreferrer" : undefined}
                       className="text-sm leading-6 text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-muted-foreground"
                     >
                       {item.value}

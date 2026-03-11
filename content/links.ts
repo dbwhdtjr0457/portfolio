@@ -77,7 +77,9 @@ export const contactItems: ContactItem[] = [
   {
     id: "resume",
     label: "이력서 링크",
-    status: "needs_check",
+    value: "Resume PDF",
+    href: "/JSYOO-resume.pdf",
+    status: "confirmed",
     note: "경력과 프로젝트를 문서 형태로 정리한 자료입니다.",
   },
 ];
