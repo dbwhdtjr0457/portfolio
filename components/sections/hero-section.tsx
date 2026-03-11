@@ -17,12 +17,13 @@ export function HeroSection() {
               </p>
             </div>
             <div className="space-y-4">
-              <h1 className="max-w-[13ch] text-3xl font-semibold tracking-[-0.04em] text-foreground sm:max-w-[15ch] sm:text-[2.75rem] sm:leading-[1.08] lg:max-w-[16ch] lg:text-[3.45rem]">
+              <h1 className="max-w-[11ch] text-[2rem] font-semibold tracking-[-0.04em] text-foreground sm:max-w-[12ch] sm:text-[2.6rem] sm:leading-[1.12] lg:max-w-[13ch] lg:text-[3.1rem]">
                 {heroContent.positioning}
               </h1>
               <p className="max-w-[62ch] text-base leading-8 text-muted-foreground">
-                기능을 빠르게 붙이는 것보다, 운영 중인 서비스를 더 안전하게
-                바꾸는 판단과 설계에 강점이 있다.
+                정책·연동·배포 리스크를 먼저 읽고, 영향도 분석과 UX
+                안전장치로 변경을 안정적으로 완수하는 판단과 설계에 강점이
+                있다.
               </p>
             </div>
           </div>
