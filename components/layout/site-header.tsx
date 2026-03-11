@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import { SiteMark } from "@/components/layout/site-mark";
 import { navigationItems } from "@/content";
 
 export function SiteHeader() {
@@ -57,8 +58,9 @@ export function SiteHeader() {
           <Link
             href="#intro"
             onClick={closeMenu}
-            className="text-sm font-semibold tracking-[0.18em] text-foreground"
+            className="inline-flex items-center gap-3 text-sm font-semibold tracking-[0.18em] text-foreground"
           >
+            <SiteMark className="h-9 w-9 shrink-0" />
             유종석
           </Link>
 
