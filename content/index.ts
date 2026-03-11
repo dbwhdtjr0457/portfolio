@@ -10,6 +10,11 @@ export {
 } from "@/content/links";
 export { navigationItems } from "@/content/navigation";
 export { featuredProject, otherProjects } from "@/content/projects";
+export {
+  featuredProjectMedia,
+  introPreviewMedia,
+  projectPreviewMedia,
+} from "@/content/media";
 export { siteMetadata } from "@/content/site-metadata";
 export { siteShellContent } from "@/content/site-shell";
 export { skills } from "@/content/skills";

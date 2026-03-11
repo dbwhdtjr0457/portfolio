@@ -8,7 +8,7 @@ export function SiteHeader() {
   );
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/80 bg-background/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-border/75 bg-background">
       <div className="container flex h-16 items-center justify-between gap-6">
         <Link
           href="#intro"
@@ -18,10 +18,13 @@ export function SiteHeader() {
         </Link>
 
         <nav aria-label="Primary" className="hidden md:block">
-          <ul className="flex items-center gap-5 text-sm text-muted-foreground">
+          <ul className="flex items-center gap-6 text-sm text-muted-foreground">
             {activeItems.map((item) => (
               <li key={item.id}>
-                <Link href={item.href} className="transition-colors hover:text-foreground">
+                <Link
+                  href={item.href}
+                  className="border-b border-transparent pb-1 hover:border-foreground/30 hover:text-foreground"
+                >
                   {item.label}
                 </Link>
               </li>

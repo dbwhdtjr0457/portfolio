@@ -23,8 +23,8 @@ export function LinkGroup({ links, compact = false }: LinkGroupProps) {
           rel="noreferrer"
           className={
             compact
-              ? "inline-flex items-center gap-1 rounded-full border border-border px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-foreground hover:text-foreground"
-              : "inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-foreground transition-colors hover:border-foreground"
+              ? "inline-flex items-center gap-1 rounded-full border border-border/80 bg-background px-3 py-1.5 text-xs text-muted-foreground hover:border-foreground/40 hover:text-foreground"
+              : "inline-flex items-center gap-2 rounded-full border border-border/80 bg-background px-4 py-2 text-sm text-foreground hover:border-foreground/40"
           }
         >
           <span>{link.label}</span>

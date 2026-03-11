@@ -468,6 +468,7 @@ type ExternalLink = {
 - [x] Experience 섹션 구현
 - [x] Project 섹션 구현
 - [x] Skills / Activities / Education / Links 섹션 구현
+- [x] 디자인 톤 및 자산 배치 1차 정리
 
 ### V1에서 반드시 구현해야 할 것
 

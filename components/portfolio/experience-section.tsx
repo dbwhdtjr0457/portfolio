@@ -26,7 +26,7 @@ export function ExperienceSection() {
           return (
             <article
               key={experience.id}
-              className="space-y-8 rounded-[2rem] border border-border/80 bg-card p-6 sm:p-8"
+              className="space-y-10 rounded-[2rem] border border-border/75 bg-card p-7 sm:p-9"
             >
               <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
                 <div className="space-y-5">
@@ -40,12 +40,12 @@ export function ExperienceSection() {
                     <h3 className="text-2xl font-semibold text-foreground">
                       {experience.name}
                     </h3>
-                    <p className="text-base leading-7 text-muted-foreground">
+                    <p className="max-w-3xl text-base leading-8 text-muted-foreground">
                       {experience.summary}
                     </p>
                   </div>
 
-                  <ul className="space-y-2 text-sm leading-6 text-muted-foreground">
+                  <ul className="space-y-3 text-sm leading-7 text-muted-foreground">
                     {experience.highlights.map((highlight) => (
                       <li key={highlight} className="flex gap-3">
                         <span className="mt-2 h-1.5 w-1.5 rounded-full bg-foreground/70" />
@@ -57,7 +57,7 @@ export function ExperienceSection() {
                   <TagList items={experience.techStack} />
                 </div>
 
-                <aside className="space-y-4 rounded-3xl border border-border/80 bg-background/80 p-5">
+                <aside className="space-y-5 rounded-[1.75rem] border border-border/70 bg-secondary/35 p-6">
                   <div className="space-y-2">
                     <p className="text-sm font-semibold text-foreground">역할</p>
                     <p className="text-sm leading-6 text-muted-foreground">
@@ -86,10 +86,7 @@ export function ExperienceSection() {
                 </p>
                 <div className="grid gap-4">
                   {experience.subItems.map((item) => (
-                    <div
-                      key={item.id}
-                      className="rounded-3xl border border-border/70 bg-background/70 p-5"
-                    >
+                    <div key={item.id} className="border-l border-border/80 pl-5 sm:pl-6">
                       <div className="space-y-3">
                         <div>
                           <h4 className="text-lg font-semibold text-foreground">
@@ -99,7 +96,7 @@ export function ExperienceSection() {
                             {item.summary}
                           </p>
                         </div>
-                        <ul className="space-y-2 text-sm leading-6 text-muted-foreground">
+                        <ul className="space-y-2 text-sm leading-7 text-muted-foreground">
                           {item.highlights.map((highlight) => (
                             <li key={highlight} className="flex gap-3">
                               <span className="mt-2 h-1.5 w-1.5 rounded-full bg-foreground/70" />

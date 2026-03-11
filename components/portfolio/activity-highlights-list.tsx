@@ -14,7 +14,7 @@ export function ActivityHighlightsList({
   }
 
   return (
-    <div className="space-y-3 rounded-3xl border border-border/80 bg-secondary/45 p-5">
+    <div className="space-y-4 border-t border-border/75 pt-5">
       <p className="text-sm font-semibold text-foreground">{title}</p>
       <ul className="space-y-3">
         {items.map((item) => (
