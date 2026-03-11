@@ -392,6 +392,55 @@ contacts
 - 영문 버전
 - 블로그/회고 연결
 
+## 구현 진행 상태
+
+### 환경 세팅 단계
+
+- [x] Next.js(App Router) + TypeScript + Tailwind CSS 기본 프로젝트 구조 정리
+- [x] `app`, `components`, `data`, `lib` 폴더 구조 준비
+- [x] `shadcn/ui`, `lucide-react`, `framer-motion` 기본 의존성 설치 및 초기 설정
+- [x] Netlify 배포를 고려한 기본 설정 추가
+- [x] 패키지 매니저를 `pnpm` 기준으로 전환
+- [x] `app/page.tsx`를 placeholder 수준의 얇은 진입점으로 유지
+- [x] Hero, Positioning, Featured Case, Additional Projects 실제 콘텐츠 구현
+- [ ] 최종 디자인/애니메이션/SEO 마감
+
+### 콘텐츠 데이터 단계
+
+- [x] 공통 타입을 `lib/types`에 분리
+- [x] hero, keyHighlights, featuredCases, additionalProjects 데이터 분리
+- [x] principles / workStyle, about / formalSpecs, links / contact 데이터 분리
+- [x] navigation metadata와 site metadata 분리
+- [x] 섹션 컴포넌트에서 실제 데이터 소비 구조 연결
+
+### 페이지 골격 단계
+
+- [x] `app/page.tsx`는 조립 전용 진입점으로 유지
+- [x] Header / Navigation, Hero, Highlights, Featured Cases, Additional Projects, Work Style, About, Links, Footer 구현
+- [x] Hero와 Positioning Summary 중복을 Hero + Highlights 구조로 통합
+- [x] data 파일을 읽어 각 섹션 컴포넌트에서 렌더링
+- [ ] 최종 시각 디테일과 반응형 polish
+
+### 디자인 시스템 / UI 정리 단계
+
+- [x] 공통 카드, 배지, 버튼/링크 패턴 정리
+- [x] Hero CTA 링크의 버튼 semantics 경고 수정
+- [x] 섹션별 최대 너비, 여백, vertical rhythm 정리
+- [x] 타이포그래피 위계와 featured/additional project 시각 위계 구분
+- [x] 헤더와 앵커 네비게이션 시인성 개선
+- [ ] 접근성 최종 점검, 미세 인터랙션, SEO 마감
+
+### 반응형 / 접근성 / 최소 인터랙션 단계
+
+- [x] 헤더 / 네비게이션 모바일 토글 대응
+- [x] 카드 그리드와 텍스트 줄 길이 반응형 조정
+- [x] 키보드 포커스 가시성과 skip link 추가
+- [x] section / heading hierarchy와 링크 / 버튼 역할 점검
+- [x] prefers-reduced-motion을 고려한 최소 섹션 등장 인터랙션 추가
+- [x] 외부 사용자가 읽기 어려운 내부 작업용 문구 제거 및 카피 정리
+- [x] 보고형/설명형 문장을 외부 독자 관점의 어필형 문장으로 재정리
+- [ ] 최종 접근성 점검과 세부 반응형 polish
+
 ## 디자인/UX 원칙
 
 - 첫 화면은 시각 장식보다 메시지 전달 속도를 우선한다.
