@@ -44,7 +44,7 @@ export function IntroSection() {
                   {introContent.role}
                 </p>
               </div>
-              <p className="max-w-[24ch] text-xl leading-9 text-foreground/92 sm:text-[1.75rem] sm:leading-[1.7]">
+              <p className="max-w-[32ch] text-xl leading-9 text-foreground/92 sm:max-w-[34ch] sm:text-[1.75rem] sm:leading-[1.7]">
                 {introContent.headline}
               </p>
               <div
