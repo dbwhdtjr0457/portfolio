@@ -5,6 +5,7 @@ dist
 coverage
 out
 *.tsbuildinfo
+references/repos
 
 # local env files
 .env
