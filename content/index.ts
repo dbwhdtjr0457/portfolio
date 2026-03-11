@@ -4,8 +4,6 @@ export { experiences } from "@/content/experiences";
 export { introContent } from "@/content/intro";
 export {
   contactItems,
-  externalLinks,
-  footerLinks,
   introLinks,
   projectLinksByEntryId,
 } from "@/content/links";

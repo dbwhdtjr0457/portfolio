@@ -474,6 +474,7 @@ type ExternalLink = {
 - [x] 이력서 정적 파일 연결
 - [x] 6단계 SEO / 최종 점검 / Netlify 배포 준비
 - [x] V1 범위 최종 완료
+- [x] Intro 문구와 Links 섹션 구조 정리
 
 ### V1에서 반드시 구현해야 할 것
 

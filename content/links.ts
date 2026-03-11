@@ -40,30 +40,14 @@ const projectRepositoryLinks: ProjectRepositoryLink[] = [
   },
 ];
 
-export const externalLinks: ExternalLink[] = projectRepositoryLinks.flatMap((link) => [
-  {
-    id: link.introId,
-    label: link.introLabel,
-    href: link.href,
-    description: link.description,
-    status: "confirmed",
-    placement: "intro",
-  },
-  {
-    id: link.footerId,
-    label: link.footerLabel,
-    href: link.href,
-    description: `${link.description} 링크`,
-    status: "confirmed",
-    placement: "footer",
-  },
-]);
-
-export const introLinks = externalLinks.filter((link) => link.placement === "intro");
-
-export const footerLinks = externalLinks.filter(
-  (link) => link.placement === "footer",
-);
+export const introLinks: ExternalLink[] = projectRepositoryLinks.map((link) => ({
+  id: link.introId,
+  label: link.introLabel,
+  href: link.href,
+  description: link.description,
+  status: "confirmed",
+  placement: "intro",
+}));
 
 export const projectLinksByEntryId = projectRepositoryLinks.reduce<Record<string, ExternalLink>>(
   (accumulator, link) => {
