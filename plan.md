@@ -463,11 +463,11 @@ type ExternalLink = {
 - [x] 환경 세팅 및 프로젝트 구조 정리
 - [x] 콘텐츠 데이터 모델 및 콘텐츠 파일 정리
 - [x] GitHub 레포 기반 참고 자료 수집
-- [ ] Intro 섹션 구현
-- [ ] Summary 섹션 구현
-- [ ] Experience 섹션 구현
-- [ ] Project 섹션 구현
-- [ ] Skills / Activities / Education / Links 섹션 구현
+- [x] Intro 섹션 구현
+- [x] Summary 섹션 구현
+- [x] Experience 섹션 구현
+- [x] Project 섹션 구현
+- [x] Skills / Activities / Education / Links 섹션 구현
 
 ### V1에서 반드시 구현해야 할 것
 

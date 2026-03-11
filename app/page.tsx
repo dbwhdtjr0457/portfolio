@@ -1,5 +1,13 @@
-import { HomePlaceholder } from "@/components/system/home-placeholder";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { PortfolioPage } from "@/components/portfolio/portfolio-page";
 
 export default function Page() {
-  return <HomePlaceholder />;
+  return (
+    <>
+      <SiteHeader />
+      <PortfolioPage />
+      <SiteFooter />
+    </>
+  );
 }

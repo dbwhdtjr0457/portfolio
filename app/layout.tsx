@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 
+import { siteMetadata } from "@/content";
 import "./globals.css";
 
 const notoSansKr = Noto_Sans_KR({
@@ -11,8 +12,8 @@ const notoSansKr = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Portfolio site foundation in progress.",
+  title: siteMetadata.title,
+  description: siteMetadata.description,
 };
 
 type RootLayoutProps = {
