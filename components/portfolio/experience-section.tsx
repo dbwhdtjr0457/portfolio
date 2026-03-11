@@ -40,12 +40,12 @@ export function ExperienceSection() {
                     <h3 className="text-2xl font-semibold text-foreground">
                       {experience.name}
                     </h3>
-                    <p className="max-w-3xl text-base leading-8 text-muted-foreground">
+                    <p className="max-w-[60ch] text-base leading-8 text-muted-foreground">
                       {experience.summary}
                     </p>
                   </div>
 
-                  <ul className="space-y-3 text-sm leading-7 text-muted-foreground">
+                  <ul className="max-w-[62ch] space-y-3 text-sm leading-7 text-muted-foreground">
                     {experience.highlights.map((highlight) => (
                       <li key={highlight} className="flex gap-3">
                         <span className="mt-2 h-1.5 w-1.5 rounded-full bg-foreground/70" />
@@ -84,19 +84,22 @@ export function ExperienceSection() {
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                   주요 작업
                 </p>
-                <div className="grid gap-4">
+                <div className="grid gap-4 xl:grid-cols-2">
                   {experience.subItems.map((item) => (
-                    <div key={item.id} className="border-l border-border/80 pl-5 sm:pl-6">
+                    <div
+                      key={item.id}
+                      className="border-l border-border/80 pl-5 sm:pl-6"
+                    >
                       <div className="space-y-3">
                         <div>
                           <h4 className="text-lg font-semibold text-foreground">
                             {item.title}
                           </h4>
-                          <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                          <p className="mt-1 max-w-[58ch] text-sm leading-6 text-muted-foreground">
                             {item.summary}
                           </p>
                         </div>
-                        <ul className="space-y-2 text-sm leading-7 text-muted-foreground">
+                        <ul className="max-w-[60ch] space-y-2 text-sm leading-7 text-muted-foreground">
                           {item.highlights.map((highlight) => (
                             <li key={highlight} className="flex gap-3">
                               <span className="mt-2 h-1.5 w-1.5 rounded-full bg-foreground/70" />

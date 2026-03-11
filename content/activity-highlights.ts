@@ -32,7 +32,7 @@ export const activityHighlights: ActivityHighlight[] = [
     id: "activity-pong-docs",
     title: "실시간 기능 문서화",
     description:
-      "Docs, Dev Log, Learning Notes와 웹소켓 통신 규약 문서화를 통해 구현과 디버깅 비용을 낮췄습니다.",
+      "문서와 개발 기록, 웹소켓 통신 규약을 정리해 구현과 디버깅 비용을 낮췄습니다.",
     source: "PONG! PONG! PONG!",
     relatedEntryId: "pong",
     recommendedPlacement: "project",

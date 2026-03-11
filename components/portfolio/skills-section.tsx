@@ -7,7 +7,7 @@ export function SkillsSection() {
       id="skills"
       eyebrow="Skills"
       title="기술"
-      description="기술은 점수화하지 않고, 경험을 읽고 난 뒤 범위가 보이도록 카테고리 단위로 정리합니다."
+      description="경험을 통해 사용한 기술을 분야별로 나누어 정리했습니다."
     >
       <div className="grid gap-6 md:grid-cols-2">
         {skills.map((group) => (

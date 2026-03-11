@@ -9,7 +9,7 @@ import { SummarySection } from "@/components/portfolio/summary-section";
 
 export function PortfolioPage() {
   return (
-    <main>
+    <main id="main-content" tabIndex={-1}>
       <IntroSection />
       <SummarySection />
       <ExperienceSection />

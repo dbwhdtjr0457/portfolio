@@ -19,13 +19,13 @@ export const featuredProject: Project = {
   summary:
     "R3F 기반 3D 밤하늘 UX와 카메라 이동, API 처리 규칙, React-Query 공통화, SPA 내비게이션 설계를 다룬 프로젝트입니다.",
   description:
-    "3D 인터랙션과 데이터 처리, 상태 설계를 함께 설명할 수 있는 프로젝트로, 포트폴리오의 대표 프로젝트로 두기 적절합니다.",
+    "3D UX와 데이터 처리, 상태 설계를 함께 보여주는 프로젝트입니다.",
   highlights: [
     "OrbitControls와 sphereGeometry를 활용해 밤하늘 UX를 구성했습니다.",
     "더블클릭 시점 이동에서 여러 대안을 비교한 뒤 카메라 위치 이동 방식을 선택했습니다.",
     "상태 코드 기반 API 처리 규칙과 401 재발급/재시도 흐름을 정리했습니다.",
     "React-Query 처리 중복을 공통화해 유지보수성을 높였습니다.",
-    "SPA 이동에서 freshness 우선 설계를 선택했습니다.",
+    "SPA 이동에서는 데이터 신선도를 우선해 설계했습니다.",
   ],
   techStack: [
     "React",
@@ -38,8 +38,7 @@ export const featuredProject: Project = {
   ],
   links: byeolsoopLink ? [byeolsoopLink] : [],
   featuredReason:
-    "3D UX, 카메라 이동, API 처리 규칙, 상태 설계를 하나의 프로젝트 안에서 함께 설명할 수 있어 대표 프로젝트로 적합합니다.",
-  note: "프로젝트 기간 정보는 spec 기준으로 불확실합니다.",
+    "3D UX와 카메라 이동, API 처리 규칙, 상태 설계를 함께 보여줄 수 있어 먼저 소개하는 프로젝트로 선택했습니다.",
 };
 
 export const otherProjects: Project[] = [
@@ -67,7 +66,6 @@ export const otherProjects: Project[] = [
       "Firebase Firestore",
     ],
     links: sleepNowLink ? [sleepNowLink] : [],
-    note: "정확도 기록과 실제 오판단 사례가 함께 있어 표현 수위는 추가 확인이 필요합니다.",
   },
   {
     id: "pong",
@@ -87,6 +85,5 @@ export const otherProjects: Project[] = [
     ],
     techStack: ["JavaScript", "Bootstrap", "Three.js", "WebSocket"],
     links: pongLink ? [pongLink] : [],
-    note: "프로젝트 기간 정보는 spec 기준으로 불확실합니다.",
   },
 ];

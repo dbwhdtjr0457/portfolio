@@ -1,5 +1,6 @@
 import { MediaFrame } from "@/components/portfolio/media-frame";
 import { Button } from "@/components/ui/button";
+import { Reveal } from "@/components/ui/reveal";
 import { introContent, introLinks, introPreviewMedia } from "@/content";
 import type { ExternalLink } from "@/content";
 
@@ -21,32 +22,40 @@ export function IntroSection() {
   return (
     <section
       id="intro"
+      aria-labelledby="intro-title"
+      aria-describedby="intro-description"
       className="scroll-mt-24 border-b border-border/65 py-20 sm:py-28"
     >
-      <div className="container">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
-          <div className="max-w-4xl space-y-9">
-            <div className="space-y-5">
+      <Reveal className="container">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(280px,360px)] lg:items-end lg:gap-16">
+          <div className="space-y-9">
+            <header className="max-w-[38rem] space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-muted-foreground">
                 Frontend Portfolio
               </p>
               <div className="space-y-3">
-                <h1 className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl">
+                <h1
+                  id="intro-title"
+                  className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl"
+                >
                   {introContent.name}
                 </h1>
                 <p className="text-xl font-medium text-foreground sm:text-[1.75rem]">
                   {introContent.role}
                 </p>
               </div>
-              <p className="max-w-3xl text-2xl leading-10 text-foreground/92 sm:text-[2rem]">
+              <p className="max-w-[20ch] text-2xl leading-10 text-foreground/92 sm:text-[2rem]">
                 {introContent.headline}
               </p>
-              <div className="max-w-3xl space-y-3 text-base leading-8 text-muted-foreground sm:text-lg">
+              <div
+                id="intro-description"
+                className="max-w-[58ch] space-y-3 text-base leading-8 text-muted-foreground sm:text-lg"
+              >
                 {introContent.description.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
-            </div>
+            </header>
 
             <div className="flex flex-wrap gap-3">
               {introContent.ctas.map((cta) => (
@@ -72,13 +81,16 @@ export function IntroSection() {
             </div>
           </div>
 
-          <aside className="space-y-4 lg:pb-2">
+          <aside
+            aria-label="대표 프로젝트 미리보기"
+            className="max-w-md space-y-4 lg:justify-self-end lg:pb-2"
+          >
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                 Selected Preview
               </p>
               <p className="text-sm leading-6 text-muted-foreground">
-                수집한 자료 중 대표 프로젝트 화면을 한 장만 먼저 보여줍니다.
+                대표 프로젝트의 분위기를 먼저 볼 수 있는 화면입니다.
               </p>
             </div>
             <MediaFrame
@@ -89,7 +101,7 @@ export function IntroSection() {
             />
           </aside>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

@@ -4,7 +4,7 @@ export const skills: SkillGroup[] = [
   {
     id: "frontend",
     category: "Frontend",
-    description: "주요 웹 프론트엔드 개발에 사용한 기술입니다.",
+    description: "웹 프론트엔드 개발의 중심이 된 기술입니다.",
     items: ["React", "TypeScript", "Next.js"],
   },
   {
@@ -15,25 +15,25 @@ export const skills: SkillGroup[] = [
       "React-Query",
       "React-Hook-Form",
       "jotai",
-      "recoil",
+      "Recoil",
     ],
   },
   {
     id: "tooling",
     category: "Tooling / Runtime",
-    description: "개발환경 개선과 런타임 이관에 연결되는 기술입니다.",
+    description: "개발환경 개선과 런타임 이관 과정에서 사용한 기술입니다.",
     items: ["Node.js", "yarn", "pnpm"],
   },
   {
     id: "three-and-realtime",
     category: "3D / Realtime",
-    description: "3D 인터랙션과 실시간 기능에서 사용한 기술입니다.",
+    description: "3D 경험과 실시간 기능 구현에 사용한 기술입니다.",
     items: ["Three.js", "React-Three-Fiber", "OrbitControls", "WebSocket"],
   },
   {
     id: "mobile",
     category: "Mobile",
-    description: "모바일 앱과 센서 기반 기능에서 사용한 기술입니다.",
+    description: "모바일 앱과 센서 기반 기능 구현에 사용한 기술입니다.",
     items: [
       "React Native",
       "모바일 센서",

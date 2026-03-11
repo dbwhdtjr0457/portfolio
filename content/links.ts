@@ -61,19 +61,23 @@ export const contactItems: ContactItem[] = [
   {
     id: "email",
     label: "이메일",
-    status: "needs_check",
-    note: "공개 여부 추가 확인 필요",
+    value: "dbwhdtjr0457@gmail.com",
+    href: "mailto:dbwhdtjr0457@gmail.com",
+    status: "confirmed",
+    note: "연락을 위한 기본 채널입니다.",
   },
   {
     id: "github-profile",
     label: "GitHub 프로필",
-    status: "needs_check",
-    note: "공개 여부 추가 확인 필요",
+    value: "github.com/dbwhdtjr0457",
+    href: "https://github.com/dbwhdtjr0457",
+    status: "confirmed",
+    note: "개인 작업과 저장소를 모아볼 수 있는 링크입니다.",
   },
   {
     id: "resume",
     label: "이력서 링크",
     status: "needs_check",
-    note: "공개 여부 추가 확인 필요",
+    note: "경력과 프로젝트를 문서 형태로 정리한 자료입니다.",
   },
 ];

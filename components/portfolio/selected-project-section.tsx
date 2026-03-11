@@ -31,15 +31,15 @@ export function SelectedProjectSection() {
       id="projects"
       eyebrow="Selected Project"
       title={featuredProject.name}
-      description="대표 프로젝트는 하나만 앞에 두고, 왜 먼저 읽을 만한지 짧게 설명하는 정도로 정리합니다."
+      description="3D UX와 데이터 처리, 상태 설계가 함께 드러나는 프로젝트입니다."
     >
-      <article className="space-y-10 rounded-[2.25rem] border border-border/75 bg-card p-7 sm:p-10">
-        <div className="grid gap-5 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.9fr)]">
+      <article className="space-y-10 rounded-[2.25rem] border border-border/75 bg-card p-7 transition-transform duration-200 hover:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none sm:p-10">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.95fr)] lg:gap-5">
           <MediaFrame
             image={primaryMedia.src}
             alt={primaryMedia.alt}
             caption={primaryMedia.caption}
-            className="lg:row-span-2"
+            className="sm:col-span-2 lg:col-span-1 lg:row-span-2"
             priority
           />
           <MediaFrame
@@ -54,7 +54,7 @@ export function SelectedProjectSection() {
           />
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px]">
+        <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_320px]">
           <div className="space-y-5">
             <div className="space-y-2">
               <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
@@ -66,12 +66,12 @@ export function SelectedProjectSection() {
               <h3 className="text-3xl font-semibold text-foreground">
                 {featuredProject.headline}
               </h3>
-              <p className="text-base leading-8 text-muted-foreground">
+              <p className="max-w-[60ch] text-base leading-8 text-muted-foreground">
                 {featuredProject.summary}
               </p>
             </div>
 
-            <ul className="space-y-3 text-sm leading-7 text-muted-foreground">
+            <ul className="max-w-[62ch] space-y-3 text-sm leading-7 text-muted-foreground">
               {featuredProject.highlights.map((highlight) => (
                 <li key={highlight} className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 rounded-full bg-foreground/70" />
@@ -93,7 +93,7 @@ export function SelectedProjectSection() {
             </div>
             {featuredProject.featuredReason ? (
               <div className="space-y-2">
-                <p className="text-sm font-semibold text-foreground">대표로 둔 이유</p>
+                <p className="text-sm font-semibold text-foreground">선정 이유</p>
                 <p className="text-sm leading-6 text-muted-foreground">
                   {featuredProject.featuredReason}
                 </p>
