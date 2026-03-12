@@ -9,9 +9,7 @@ import { navigationItems } from "@/content";
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const activeItems = navigationItems.filter(
-    (item) => item.visibility === "active" && item.id !== "links",
-  );
+  const activeItems = navigationItems.filter((item) => item.visibility === "active");
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 768px)");

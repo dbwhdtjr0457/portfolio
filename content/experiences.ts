@@ -7,7 +7,7 @@ export const experiences: Experience[] = [
     name: "카카오페이",
     headline: "FE 인턴",
     role: "프론트엔드 개발",
-    period: "약 7개월",
+    period: "2025.04 ~ 2025.10",
     summary:
       "운영 중인 서비스 백로그, 통합 마케팅 어드민 고도화, UI 변경, 개발환경 개선 작업을 수행했습니다.",
     description:

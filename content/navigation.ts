@@ -11,6 +11,12 @@ export const navigationItems: NavigationItem[] = [
     id: "summary",
     label: "Summary",
     href: "#summary",
+    visibility: "conditional",
+  },
+  {
+    id: "timeline",
+    label: "Timeline",
+    href: "#timeline",
     visibility: "active",
   },
   {
@@ -29,7 +35,7 @@ export const navigationItems: NavigationItem[] = [
     id: "skills",
     label: "Skills",
     href: "#skills",
-    visibility: "active",
+    visibility: "conditional",
   },
   {
     id: "activities",
@@ -41,12 +47,6 @@ export const navigationItems: NavigationItem[] = [
     id: "education",
     label: "Education",
     href: "#education",
-    visibility: "active",
-  },
-  {
-    id: "links",
-    label: "Links",
-    href: "#links",
     visibility: "active",
   },
 ];

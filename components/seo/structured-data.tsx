@@ -1,4 +1,4 @@
-import { contactItems, introContent, siteMetadata, skills } from "@/content";
+import { introContent, siteMetadata, skills } from "@/content";
 import { getAbsoluteUrl } from "@/lib/site-url";
 
 type OrganizationJsonLd = {
@@ -22,8 +22,6 @@ type PersonJsonLd = {
   jobTitle: string;
   description: string;
   url: string;
-  email?: string;
-  sameAs?: string[];
   alumniOf: OrganizationJsonLd;
   knowsAbout: string[];
 };
@@ -33,16 +31,10 @@ type GraphJsonLd = {
   "@graph": [WebsiteJsonLd, PersonJsonLd];
 };
 
-function getContactValue(id: string) {
-  return contactItems.find((item) => item.id === id);
-}
-
 export function StructuredData() {
   const websiteId = getAbsoluteUrl("/#website");
   const personId = getAbsoluteUrl("/#person");
   const siteUrl = getAbsoluteUrl("/");
-  const githubProfile = getContactValue("github-profile");
-  const email = getContactValue("email");
   const knowsAbout = Array.from(new Set(skills.flatMap((group) => group.items)));
 
   const person: PersonJsonLd = {
@@ -58,14 +50,6 @@ export function StructuredData() {
     },
     knowsAbout,
   };
-
-  if (email?.value) {
-    person.email = email.value;
-  }
-
-  if (githubProfile?.href) {
-    person.sameAs = [githubProfile.href];
-  }
 
   const data: GraphJsonLd = {
     "@context": "https://schema.org",

@@ -11,12 +11,12 @@ export const summaryItems: SummaryItem[] = [
     id: "summary-projects",
     title: "프로젝트 3개",
     description:
-      "별숲, Sleep Now!, PONG를 각 프로젝트의 성격과 역할이 드러나도록 정리했습니다.",
+      "별숲, PONG, Sleep Now!를 각 프로젝트의 맥락과 역할이 드러나도록 정리했습니다.",
   },
   {
-    id: "summary-skill-range",
-    title: "기술 범위",
+    id: "summary-credentials",
+    title: "학력 및 수료 이력",
     description:
-      "React와 Next.js, 상태 관리와 데이터 처리, 3D와 실시간, 모바일 앱까지 경험한 기술을 소개합니다.",
+      "학위, 교육 과정, 자격증, 어학 정보를 간결하게 정리했습니다.",
   },
 ];

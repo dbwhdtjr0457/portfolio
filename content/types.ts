@@ -29,15 +29,6 @@ export type ExternalLink = {
   placement: LinkPlacement;
 };
 
-export type ContactItem = {
-  id: string;
-  label: string;
-  value?: string;
-  href?: string;
-  status: LinkStatus;
-  note: string;
-};
-
 export type CtaItem = {
   id: string;
   label: string;
@@ -105,12 +96,17 @@ export type SkillGroup = {
 
 export type EducationContent = {
   school: string;
+  college: string;
   major: string;
   degree: string;
+  period: string;
+  track: string;
+  credits: string;
   score: string;
   coursework: string[];
-  certifications: string[];
-  language: string[];
+  trainings: CredentialItem[];
+  certifications: CredentialItem[];
+  language: CredentialItem[];
 };
 
 export type ActivityHighlight = {
@@ -120,4 +116,24 @@ export type ActivityHighlight = {
   source: string;
   relatedEntryId: string;
   recommendedPlacement: RecommendedPlacement;
+};
+
+export type CredentialItem = {
+  id: string;
+  title: string;
+  detail: string;
+};
+
+export type TimelineItem = {
+  id: string;
+  period: string;
+  title: string;
+  detail?: string;
+};
+
+export type ActivitySummary = {
+  id: string;
+  title: string;
+  description: string;
+  source: string;
 };

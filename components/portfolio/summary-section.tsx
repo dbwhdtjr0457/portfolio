@@ -7,7 +7,7 @@ export function SummarySection() {
       id="summary"
       eyebrow="Summary"
       title="한눈에 보기"
-      description="경력과 프로젝트, 기술 범위를 빠르게 살펴볼 수 있도록 핵심만 추렸습니다."
+      description="실무 경험, 프로젝트, 학력 및 수료 이력을 빠르게 파악할 수 있도록 핵심만 추렸습니다."
     >
       <div className="grid gap-6 border-t border-border/75 pt-6 md:grid-cols-3">
         {summaryItems.map((item) => (

@@ -7,7 +7,8 @@ export const featuredProject: Project = {
   name: "별숲",
   headline: "3D 별자리 다이어리",
   role: "프론트엔드",
-  projectType: "팀 프로젝트",
+  projectType: "부스트캠프 멤버십 프로젝트",
+  period: "2023.08 ~ 2023.12",
   summary:
     "R3F 기반 3D 밤하늘 UX와 카메라 이동, API 처리 규칙, React-Query 공통화, SPA 내비게이션 설계를 다룬 프로젝트입니다.",
   description:
@@ -40,7 +41,7 @@ export const otherProjects: Project[] = [
     name: "Sleep Now!",
     headline: "수면 직전 감지 및 스마트폰 사용 중재 앱",
     role: "React Native 개발",
-    projectType: "프로젝트",
+    projectType: "대학 프로젝트",
     summary:
       "센서 기반 예측과 notifee 알림 중재, 포그라운드 서비스 운영을 중심으로 한 모바일 앱입니다.",
     description:
@@ -67,7 +68,8 @@ export const otherProjects: Project[] = [
     name: "PONG! PONG! PONG!",
     headline: "로컬/온라인 PONG 게임 서비스",
     role: "프론트엔드",
-    projectType: "프로젝트",
+    projectType: "42 Seoul 프로젝트",
+    period: "2024.02 ~ 2024.05",
     summary:
       "대시보드 모달 UI와 API 연결, Three.js 그래픽, 로컬 WebSocket, 게임 계산 로직을 맡은 게임 프로젝트입니다.",
     description:

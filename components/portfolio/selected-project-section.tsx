@@ -56,16 +56,17 @@ export function SelectedProjectSection() {
 
         <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_320px]">
           <div className="space-y-5">
-            <div className="space-y-2">
-              <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                <span className="rounded-full bg-accent px-3 py-1 text-accent-foreground">
-                  대표 프로젝트
-                </span>
-                <span>{featuredProject.projectType}</span>
-              </div>
-              <h3 className="text-3xl font-semibold text-foreground">
-                {featuredProject.headline}
-              </h3>
+              <div className="space-y-2">
+                <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                  <span className="rounded-full bg-accent px-3 py-1 text-accent-foreground">
+                    대표 프로젝트
+                  </span>
+                  <span>{featuredProject.projectType}</span>
+                  {featuredProject.period ? <span>{featuredProject.period}</span> : null}
+                </div>
+                <h3 className="text-3xl font-semibold text-foreground">
+                  {featuredProject.headline}
+                </h3>
               <p className="max-w-[60ch] text-base leading-8 text-muted-foreground">
                 {featuredProject.summary}
               </p>

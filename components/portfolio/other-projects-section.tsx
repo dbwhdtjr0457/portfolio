@@ -51,6 +51,7 @@ export function OtherProjectsSection() {
                         {project.projectType}
                       </span>
                       <span>{project.role}</span>
+                      {project.period ? <span>{project.period}</span> : null}
                     </div>
                     <h3 className="text-xl font-semibold text-foreground">
                       {project.name}

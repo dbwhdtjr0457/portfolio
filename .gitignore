@@ -17,3 +17,15 @@ references/repos
 # misc
 DS_Store
 *.log
+*.deb
+.playwright-cli/
+public/evidence/
+/42 Seoul_Certificated_joyoo (1).pdf
+/네이버부스트캠프_8기_멤버십.pdf
+/네이버부스트캠프_8기_챌린지.pdf
+/유종석_성적증명서.pdf
+/유종석_이력서.pdf
+/정보처리기사_자격증.pdf
+/졸업증명서.pdf
+/토익_성적표.pdf
+/토익_스피킹_성적표.pdf

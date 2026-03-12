@@ -1,12 +1,9 @@
+export { activities } from "@/content/activities";
 export { activityHighlights } from "@/content/activity-highlights";
 export { education } from "@/content/education";
 export { experiences } from "@/content/experiences";
 export { introContent } from "@/content/intro";
-export {
-  contactItems,
-  introLinks,
-  projectLinksByEntryId,
-} from "@/content/links";
+export { introLinks, projectLinksByEntryId } from "@/content/links";
 export { navigationItems } from "@/content/navigation";
 export { featuredProject, otherProjects } from "@/content/projects";
 export {
@@ -17,10 +14,12 @@ export {
 export { siteMetadata } from "@/content/site-metadata";
 export { skills } from "@/content/skills";
 export { summaryItems } from "@/content/summary";
+export { timelineItems } from "@/content/timeline";
 export type {
+  ActivitySummary,
   ActivityHighlight,
-  ContactItem,
   CtaItem,
+  CredentialItem,
   EducationContent,
   Experience,
   ExternalLink,
@@ -30,4 +29,5 @@ export type {
   SkillGroup,
   SiteMetadataContent,
   SummaryItem,
+  TimelineItem,
 } from "@/content/types";
