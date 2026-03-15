@@ -49,4 +49,10 @@ export const navigationItems: NavigationItem[] = [
     href: "#education",
     visibility: "active",
   },
+  {
+    id: "contact",
+    label: "Contact",
+    href: "#contact",
+    visibility: "active",
+  },
 ];

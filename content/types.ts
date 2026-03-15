@@ -45,6 +45,13 @@ export type IntroContent = {
   ctas: CtaItem[];
 };
 
+export type ContactContent = {
+  title: string;
+  description: string;
+  email: string;
+  note?: string;
+};
+
 export type SummaryItem = {
   id: string;
   title: string;

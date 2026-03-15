@@ -1,4 +1,4 @@
-import { introContent, siteMetadata, skills } from "@/content";
+import { contactContent, introContent, siteMetadata, skills } from "@/content";
 import { getAbsoluteUrl } from "@/lib/site-url";
 
 type OrganizationJsonLd = {
@@ -22,6 +22,7 @@ type PersonJsonLd = {
   jobTitle: string;
   description: string;
   url: string;
+  email: string;
   alumniOf: OrganizationJsonLd;
   knowsAbout: string[];
 };
@@ -44,6 +45,7 @@ export function StructuredData() {
     jobTitle: introContent.role,
     description: siteMetadata.description,
     url: siteUrl,
+    email: contactContent.email,
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: "경희대학교",

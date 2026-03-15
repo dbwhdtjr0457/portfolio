@@ -1,4 +1,5 @@
 import { ActivitiesSection } from "@/components/portfolio/activities-section";
+import { ContactSection } from "@/components/portfolio/contact-section";
 import { EducationSection } from "@/components/portfolio/education-section";
 import { ExperienceSection } from "@/components/portfolio/experience-section";
 import { IntroSection } from "@/components/portfolio/intro-section";
@@ -20,6 +21,7 @@ export function PortfolioPage() {
       <SkillsSection />
       <ActivitiesSection />
       <EducationSection />
+      <ContactSection />
     </main>
   );
 }

@@ -1,5 +1,6 @@
 export { activities } from "@/content/activities";
 export { activityHighlights } from "@/content/activity-highlights";
+export { contactContent } from "@/content/contact";
 export { education } from "@/content/education";
 export { experiences } from "@/content/experiences";
 export { introContent } from "@/content/intro";
@@ -18,6 +19,7 @@ export { timelineItems } from "@/content/timeline";
 export type {
   ActivitySummary,
   ActivityHighlight,
+  ContactContent,
   CtaItem,
   CredentialItem,
   EducationContent,
