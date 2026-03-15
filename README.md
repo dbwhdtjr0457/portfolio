@@ -3,6 +3,8 @@
 Next.js App Router로 만든 단일 페이지 포트폴리오 사이트입니다.  
 카카오페이 실무 경험, 대표 프로젝트 3개, 학력 및 자격 정보, 연락처를 한 흐름 안에서 보여주는 데 초점을 맞췄습니다.
 
+배포 주소: `https://portfolio.joyoo-blog.com/`
+
 ## 개요
 
 - 프레임워크: Next.js 16, React 19, TypeScript
@@ -22,6 +24,10 @@ Next.js App Router로 만든 단일 페이지 포트폴리오 사이트입니다
 - `app/sitemap.ts`, `app/robots.ts`, `app/opengraph-image.tsx`, `components/seo/structured-data.tsx`로 SEO 기본 요소 제공
 - `references/collected/`의 이미지와 README 자료를 활용해 프로젝트 미리보기 화면 구성
 - 접근성 고려 요소 포함: skip link, focus-visible 스타일, reduced motion 대응, 시맨틱 섹션 구조
+
+## 라이브 사이트
+
+- Production: `https://portfolio.joyoo-blog.com/`
 
 ## 기술 스택
 
@@ -153,7 +159,7 @@ pnpm typecheck  # TypeScript 타입 검사
 예시:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_SITE_URL=https://portfolio.joyoo-blog.com
 ```
 
 ## 스타일 시스템
