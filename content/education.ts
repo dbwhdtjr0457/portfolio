@@ -51,13 +51,13 @@ export const education: EducationContent = {
   language: [
     {
       id: "toeic",
-      title: "TOEIC 950",
-      detail: "LC 490 / RC 460, 시험일 2024.08.04",
+      title: "TOEIC 940",
+      detail: "LC 470 / RC 470, 시험일 2026.08.23 · 유효기간 2028.08.23",
     },
     {
       id: "toeic-speaking",
-      title: "TOEIC Speaking Advanced Low, 160점",
-      detail: "시험일 2024.09.07",
+      title: "TOEIC Speaking 160 (Advanced Low)",
+      detail: "시험일 2026.08.23 · 유효기간 2028.08.23",
     },
     {
       id: "english-conversation",

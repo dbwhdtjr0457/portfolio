@@ -25,7 +25,8 @@ export function SectionShell({
       aria-describedby={descriptionId}
       className="scroll-mt-24 border-b border-border/65 py-16 sm:py-24"
     >
-      <Reveal className="container space-y-10">
+      <div className="container space-y-12">
+        <Reveal>
         <header className="max-w-3xl space-y-4">
           {eyebrow ? (
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
@@ -47,8 +48,9 @@ export function SectionShell({
             </p>
           ) : null}
         </header>
+        </Reveal>
         {children}
-      </Reveal>
+      </div>
     </section>
   );
 }

@@ -1,6 +1,8 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 
-import { introContent, siteMetadata } from "@/content";
+import { introContent } from "@/content";
 
 export const size = {
   width: 1200,
@@ -8,235 +10,153 @@ export const size = {
 };
 
 export const contentType = "image/png";
+export const runtime = "nodejs";
 
-export default function OpenGraphImage() {
+function readFont(filename: string) {
+  return readFile(path.join(process.cwd(), "app", "fonts", filename));
+}
+
+export default async function OpenGraphImage() {
+  const [regular, bold] = await Promise.all([
+    readFont("Pretendard-OG-Regular.woff"),
+    readFont("Pretendard-OG-Bold.woff"),
+  ]);
+
   return new ImageResponse(
     (
       <div
         style={{
           display: "flex",
-          height: "100%",
           width: "100%",
-          background:
-            "linear-gradient(180deg, #f7f1e6 0%, #efe6d5 100%)",
-          color: "#223746",
-          padding: "56px",
-          fontFamily: "Noto Sans KR, sans-serif",
+          height: "100%",
+          padding: "52px 58px",
+          background: "#f3f0e7",
+          color: "#1b1e1b",
+          fontFamily: "Pretendard",
         }}
       >
         <div
           style={{
             display: "flex",
             width: "100%",
-            height: "100%",
-            border: "2px solid rgba(34, 55, 70, 0.12)",
-            borderRadius: "36px",
-            background: "rgba(255,255,255,0.72)",
-            padding: "48px",
+            borderTop: "2px solid #1b1e1b",
+            borderBottom: "2px solid #1b1e1b",
+            alignItems: "center",
             justifyContent: "space-between",
+            gap: "52px",
           }}
         >
           <div
             style={{
               display: "flex",
+              width: "704px",
+              height: "100%",
+              padding: "34px 0",
               flexDirection: "column",
               justifyContent: "space-between",
-              maxWidth: "720px",
             }}
           >
             <div
               style={{
                 display: "flex",
-                fontSize: 24,
+                fontSize: 18,
                 fontWeight: 700,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "rgba(34, 55, 70, 0.72)",
+                color: "#a93e29",
               }}
             >
-              Frontend Portfolio
+              {introContent.name} / {introContent.role}
             </div>
+
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "20px",
+                gap: "11px",
+                fontSize: 62,
+                fontWeight: 700,
+                letterSpacing: "-0.03em",
+                lineHeight: 1.08,
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  fontSize: 70,
-                  fontWeight: 700,
-                  lineHeight: 1.05,
-                }}
-              >
-                {introContent.name}
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  fontSize: 34,
-                  fontWeight: 600,
-                }}
-              >
-                {introContent.role}
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  fontSize: 30,
-                  lineHeight: 1.45,
-                  color: "rgba(34, 55, 70, 0.86)",
-                }}
-              >
-                {introContent.headline}
-              </div>
+              {introContent.headline.map((line) => (
+                <div key={line} style={{ display: "flex" }}>
+                  {line}
+                </div>
+              ))}
             </div>
+
             <div
               style={{
                 display: "flex",
-                fontSize: 24,
-                color: "rgba(34, 55, 70, 0.7)",
+                fontSize: 15,
+                color: "#5c6059",
               }}
             >
-              {siteMetadata.siteName}
+              CHATPLANET · KAKAOPAY · THREE.JS
             </div>
           </div>
 
           <div
             style={{
               display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "240px",
+              width: "310px",
+              height: "356px",
+              padding: "24px",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              background: "#1b1e1b",
+              color: "#faf8f2",
+              boxShadow: "14px 14px 0 #a93e29",
             }}
           >
             <div
               style={{
                 display: "flex",
-                width: "180px",
-                height: "180px",
-                borderRadius: "48px",
-                background: "#223746",
-                position: "relative",
+                justifyContent: "space-between",
+                fontSize: 12,
+                color: "#b7bbb2",
               }}
             >
-              <div
-                style={{
-                  position: "absolute",
-                  top: "28px",
-                  left: "28px",
-                  width: "124px",
-                  height: "112px",
-                  borderRadius: "32px",
-                  background: "#f7f1e6",
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  top: "52px",
-                  left: "48px",
-                  width: "42px",
-                  height: "8px",
-                  borderRadius: "999px",
-                  background: "#223746",
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  top: "68px",
-                  left: "48px",
-                  width: "28px",
-                  height: "8px",
-                  borderRadius: "999px",
-                  background: "#223746",
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  top: "46px",
-                  left: "106px",
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "999px",
-                  background: "#c8734d",
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  top: "64px",
-                  left: "126px",
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "999px",
-                  background: "#d8a55a",
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  top: "42px",
-                  left: "144px",
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "999px",
-                  background: "#c8734d",
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  top: "108px",
-                  left: "54px",
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "999px",
-                  background: "#223746",
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  top: "90px",
-                  left: "78px",
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "999px",
-                  background: "#d8a55a",
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  top: "102px",
-                  left: "100px",
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "999px",
-                  background: "#223746",
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  top: "82px",
-                  left: "126px",
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "999px",
-                  background: "#d8a55a",
-                }}
-              />
+              <span style={{ color: "#a93e29" }}>PORTFOLIO · 2026</span>
+              <span>FRONTEND</span>
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 86,
+                fontWeight: 700,
+                letterSpacing: "-0.08em",
+              }}
+            >
+              <span>유</span>
+              <span style={{ color: "#a93e29", transform: "translateY(9px)" }}>종</span>
+              <span>석</span>
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                fontSize: 11,
+                color: "#b7bbb2",
+              }}
+            >
+              <span>WEB · REALTIME</span>
+              <span style={{ color: "#a93e29" }}>3D · MOBILE</span>
             </div>
           </div>
         </div>
       </div>
     ),
-    size,
+    {
+      ...size,
+      fonts: [
+        { name: "Pretendard", data: regular, style: "normal", weight: 400 },
+        { name: "Pretendard", data: bold, style: "normal", weight: 700 },
+      ],
+    },
   );
 }

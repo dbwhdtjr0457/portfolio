@@ -5,7 +5,7 @@ export const activityHighlights: ActivityHighlight[] = [
     id: "activity-kakaopay-collaboration",
     title: "실무 협업과 QA 대응",
     description:
-      "스크럼, 주간 회의, 슬랙, 기획서 댓글 기반 조율과 QA 대응을 경험했습니다.",
+      "스크럼·회의·기획서 댓글 · 요구사항 조율 · QA 조건 공유",
     source: "카카오페이",
     relatedEntryId: "kakaopay",
     recommendedPlacement: "experience",
@@ -14,7 +14,7 @@ export const activityHighlights: ActivityHighlight[] = [
     id: "activity-byeolsoop-records",
     title: "기록 기반 프로젝트 운영",
     description:
-      "스프린트, 백로그, 데일리 스크럼, 회의록, 개발일지, 멘토링 일지 등 기록 중심 운영을 진행했습니다.",
+      "스프린트·백로그 운영 · 회의·개발·멘토링 기록",
     source: "별숲",
     relatedEntryId: "byeolsoop",
     recommendedPlacement: "project",
@@ -23,16 +23,16 @@ export const activityHighlights: ActivityHighlight[] = [
     id: "activity-byeolsoop-ground-rule",
     title: "Ground Rule 기반 팀 리듬 합의",
     description:
-      "코어타임과 오프라인 회의, 루틴을 합의해 커뮤니케이션 비용을 줄였습니다.",
+      "팀 코어타임 · 오프라인 회의 시간 합의",
     source: "별숲",
     relatedEntryId: "byeolsoop",
     recommendedPlacement: "project",
   },
   {
     id: "activity-pong-docs",
-    title: "실시간 기능 문서화",
+    title: "3D 게임과 실시간 구현",
     description:
-      "문서와 개발 기록, 웹소켓 통신 규약을 정리해 구현과 디버깅 비용을 낮췄습니다.",
+      "Three.js 그래픽 · 로컬 WebSocket · 계산 로직",
     source: "PONG! PONG! PONG!",
     relatedEntryId: "pong",
     recommendedPlacement: "project",

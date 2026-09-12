@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR } from "next/font/google";
+import localFont from "next/font/local";
 
 import { StructuredData } from "@/components/seo/structured-data";
 import { siteMetadata } from "@/content";
 import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
+import "./portfolio-editorial.css";
 
-const notoSansKr = Noto_Sans_KR({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
+const pretendard = localFont({
+  src: "./fonts/PretendardVariable.woff2",
+  weight: "45 920",
+  style: "normal",
   display: "swap",
-  variable: "--font-sans",
+  variable: "--font-pretendard",
+  fallback: [
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    "Malgun Gothic",
+    "Segoe UI",
+    "sans-serif",
+  ],
 });
 
 export const metadata: Metadata = {
@@ -55,7 +64,7 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ko">
-      <body className={notoSansKr.className}>
+      <body className={`${pretendard.className} ${pretendard.variable}`}>
         <StructuredData />
         {children}
       </body>

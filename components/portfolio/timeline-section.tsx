@@ -7,7 +7,7 @@ export function TimelineSection() {
       id="timeline"
       eyebrow="Timeline"
       title="연혁"
-      description="학위, 교육 과정, 경력, 자격 취득 흐름을 짧게 정리했습니다."
+      description="학력 · 교육 · 경력 · 자격"
     >
       <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
         {timelineItems.map((item) => (

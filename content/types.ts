@@ -39,7 +39,7 @@ export type CtaItem = {
 export type IntroContent = {
   name: string;
   role: string;
-  headline: string;
+  headline: [string, string];
   description: string[];
   primaryLinkIds: string[];
   ctas: CtaItem[];

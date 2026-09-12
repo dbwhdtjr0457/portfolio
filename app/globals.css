@@ -4,19 +4,19 @@
 
 @layer base {
   :root {
-    --background: 40 36% 97%;
+    --background: 220 14% 98%;
     --foreground: 215 26% 15%;
     --card: 0 0% 100%;
     --card-foreground: 215 26% 15%;
     --primary: 208 47% 17%;
     --primary-foreground: 42 33% 96%;
-    --secondary: 36 31% 92%;
+    --secondary: 220 18% 95%;
     --secondary-foreground: 215 22% 24%;
     --muted: 42 22% 93%;
     --muted-foreground: 215 10% 43%;
-    --accent: 24 74% 86%;
+    --accent: 212 70% 90%;
     --accent-foreground: 215 26% 16%;
-    --border: 36 18% 84%;
+    --border: 220 12% 88%;
     --input: 36 18% 84%;
     --ring: 208 47% 17%;
     --radius: 1.25rem;
@@ -26,16 +26,12 @@
     @apply border-border;
   }
 
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
-  }
+html {
+  scroll-padding-top: 6rem;
+}
 
   body {
     @apply bg-background text-foreground antialiased;
-    background-image:
-      radial-gradient(circle at top left, rgba(221, 188, 139, 0.16), transparent 20rem),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 244, 236, 0.98));
     word-break: keep-all;
     overflow-wrap: break-word;
   }
@@ -59,6 +55,10 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .scroll-scene {
+      transform: none !important;
+    }
+
     html {
       scroll-behavior: auto;
     }

@@ -31,9 +31,9 @@ export function SelectedProjectSection() {
       id="projects"
       eyebrow="Selected Project"
       title={featuredProject.name}
-      description="3D UX와 데이터 처리, 상태 설계가 함께 드러나는 프로젝트입니다."
+      description={featuredProject.description}
     >
-      <article className="space-y-10 rounded-[2.25rem] border border-border/75 bg-card p-7 transition-transform duration-200 hover:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none sm:p-10">
+      <article className="space-y-10 rounded-[2.25rem] border border-border/75 bg-card p-7 transition-shadow duration-200  motion-reduce:transform-none motion-reduce:transition-none sm:p-10">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.95fr)] lg:gap-5">
           <MediaFrame
             image={primaryMedia.src}

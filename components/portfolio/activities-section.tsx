@@ -7,7 +7,7 @@ export function ActivitiesSection() {
       id="activities"
       eyebrow="Activities"
       title="협업과 기록"
-      description="프로젝트와 실무 경험을 뒷받침한 협업 방식과 기록 습관을 따로 묶어 정리했습니다."
+      description="요구사항 조율 · 판단 기록"
     >
       <div className="grid gap-5 lg:grid-cols-3">
         {activities.map((item) => (

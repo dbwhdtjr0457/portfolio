@@ -7,7 +7,7 @@ export function EducationSection() {
       id="education"
       eyebrow="Education & Credentials"
       title="학력과 공식 이력"
-      description="학위, 교육 수료, 자격증, 어학 정보를 본문에서 읽기 쉬운 형태로 정리했습니다."
+      description="학위 · 교육 · 자격 · 어학"
     >
       <div className="grid gap-5 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
         <article className="rounded-[2rem] border border-border/70 bg-card p-6 sm:p-8">

@@ -7,7 +7,7 @@ export function SkillsSection() {
       id="skills"
       eyebrow="Skills"
       title="기술"
-      description="경험을 통해 사용한 기술을 분야별로 나누어 정리했습니다."
+      description="실무·개인 프로젝트 기술"
     >
       <div className="grid gap-6 md:grid-cols-2">
         {skills.map((group) => (

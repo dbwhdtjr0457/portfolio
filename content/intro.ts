@@ -3,10 +3,14 @@ import type { IntroContent } from "@/content/types";
 export const introContent: IntroContent = {
   name: "유종석",
   role: "프론트엔드 개발자",
-  headline: "운영 중인 서비스의 변경과 사용자 흐름을 안정적으로 다루는 프론트엔드 개발자입니다.",
+  headline: [
+    "시도는 과감하게,",
+    "검증은 집요하게.",
+  ],
   description: [
-    "카카오페이 실무 경험과 프로젝트, 공식 이력을 함께 정리했습니다.",
-    "운영 맥락의 변경 대응과 프로젝트별 구현 내용을 기존 흐름 안에서 담백하게 소개합니다.",
+    "Chatplanet · 관리자 웹 / 메시징 Web SDK",
+    "카카오페이 · 마케팅 어드민",
+    "개인 프로젝트 · 3D 웹 / 센서 기반 모바일 앱",
   ],
   primaryLinkIds: ["byeolsoop-github", "pong-github", "sleep-now-github"],
   ctas: [

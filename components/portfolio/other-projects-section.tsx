@@ -18,7 +18,7 @@ export function OtherProjectsSection() {
       id="other-projects"
       eyebrow="Other Projects"
       title="다른 프로젝트"
-      description="서로 다른 기술 맥락의 프로젝트를 같은 흐름 안에서 간결하게 소개합니다."
+      description="Three.js 게임 · 센서 기반 모바일 앱"
     >
       <div className="grid gap-6 xl:grid-cols-2">
         {otherProjects.map((project) => {
@@ -28,7 +28,7 @@ export function OtherProjectsSection() {
           return (
             <article
               key={project.id}
-              className="flex h-full flex-col gap-6 rounded-[2rem] border border-border/75 bg-card p-6 transition-transform duration-200 hover:-translate-y-1 motion-reduce:transform-none motion-reduce:transition-none sm:p-7"
+              className="flex h-full flex-col gap-6 rounded-[2rem] border border-border/75 bg-card p-6 transition-shadow duration-200  motion-reduce:transform-none motion-reduce:transition-none sm:p-7"
             >
               <div className="grid gap-6 md:grid-cols-[220px_minmax(0,1fr)] md:items-start">
                 {previewMedia.length > 0 ? (

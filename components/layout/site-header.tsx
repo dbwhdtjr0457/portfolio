@@ -4,12 +4,51 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import { SiteMark } from "@/components/layout/site-mark";
 import { navigationItems } from "@/content";
+
+const activeItems = navigationItems.filter((item) => item.visibility === "active");
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const activeItems = navigationItems.filter((item) => item.visibility === "active");
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+
+  useEffect(() => {
+    let frame = 0;
+
+    const updateActiveSection = () => {
+      frame = 0;
+      const marker = window.scrollY + Math.min(window.innerHeight * 0.32, 320);
+      let nextSection: string | null = null;
+
+      for (const item of activeItems) {
+        const section = document.getElementById(item.id);
+        if (section && section.offsetTop <= marker) {
+          nextSection = item.id;
+        }
+      }
+
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4) {
+        nextSection = "contact";
+      }
+
+      setActiveSection((current) => current === nextSection ? current : nextSection);
+    };
+
+    const scheduleUpdate = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(updateActiveSection);
+    };
+
+    scheduleUpdate();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+    };
+  }, []);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 768px)");
@@ -58,8 +97,8 @@ export function SiteHeader() {
             onClick={closeMenu}
             className="inline-flex items-center gap-3 text-sm font-semibold tracking-[0.18em] text-foreground"
           >
-            <SiteMark className="h-9 w-9 shrink-0" />
-            유종석
+            <span aria-hidden="true" className="portfolio-wordmark">YS</span>
+            <span>유종석</span>
           </Link>
 
           <button
@@ -79,13 +118,14 @@ export function SiteHeader() {
             )}
           </button>
 
-          <nav aria-label="Primary" className="hidden md:block">
+          <nav aria-label="주요 메뉴" className="hidden md:block">
             <ul className="flex items-center gap-6 text-sm text-muted-foreground">
               {activeItems.map((item) => (
                 <li key={item.id}>
                   <Link
                     href={item.href}
-                    className="border-b border-transparent pb-1 transition-colors hover:border-foreground/30 hover:text-foreground"
+                    aria-current={activeSection === item.id ? "location" : undefined}
+                    className={`border-b pb-1 transition-colors ${activeSection === item.id ? "border-foreground text-foreground" : "border-transparent hover:border-foreground/30 hover:text-foreground"}`}
                   >
                     {item.label}
                   </Link>
@@ -98,7 +138,7 @@ export function SiteHeader() {
         {isMenuOpen ? (
           <nav
             id="mobile-primary-navigation"
-            aria-label="Mobile primary"
+            aria-label="모바일 주요 메뉴"
             className="mt-4 border-t border-border/75 pt-4 md:hidden"
           >
             <ul className="grid gap-2">
@@ -107,7 +147,8 @@ export function SiteHeader() {
                   <Link
                     href={item.href}
                     onClick={closeMenu}
-                    className="flex min-h-11 items-center rounded-2xl px-4 py-3 text-sm text-foreground transition-colors hover:bg-secondary/55"
+                    aria-current={activeSection === item.id ? "location" : undefined}
+                    className={`flex min-h-11 items-center rounded-2xl px-4 py-3 text-sm text-foreground transition-colors ${activeSection === item.id ? "bg-secondary/70" : "hover:bg-secondary/55"}`}
                   >
                     {item.label}
                   </Link>

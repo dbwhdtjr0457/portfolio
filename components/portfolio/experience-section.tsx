@@ -1,128 +1,49 @@
-import { activityHighlights, experiences } from "@/content";
-import { ActivityHighlightsList } from "@/components/portfolio/activity-highlights-list";
-import { SectionShell } from "@/components/portfolio/section-shell";
-import { TagList } from "@/components/portfolio/tag-list";
-
-function getExperienceActivities(experienceId: string) {
-  return activityHighlights.filter(
-    (item) =>
-      item.relatedEntryId === experienceId &&
-      item.recommendedPlacement === "experience",
-  );
-}
+import { experiences } from "@/content";
 
 export function ExperienceSection() {
   return (
-    <SectionShell
-      id="experience"
-      eyebrow="Experience"
-      title="카카오페이"
-      description="실무 경험은 하나의 경력 단위로 정리하고, 내부 작업은 성격별로 나눠 보여줍니다."
-    >
-      <div className="space-y-8">
-        {experiences.map((experience) => {
-          const relatedActivities = getExperienceActivities(experience.id);
+    <section id="experience" aria-labelledby="experience-title" className="career-section">
+      <div className="container">
+        <header>
+          <p className="section-index" aria-hidden="true">01</p>
+          <h2 id="experience-title">경력</h2>
+        </header>
 
-          return (
-            <article
-              key={experience.id}
-              className="space-y-10 rounded-[2rem] border border-border/75 bg-card p-7 sm:p-9"
-            >
-              <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
-                <div className="space-y-5">
-                  <div className="space-y-2">
-                    <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                      <span className="rounded-full bg-secondary px-3 py-1 text-secondary-foreground">
-                        {experience.headline}
-                      </span>
-                      <span>{experience.period}</span>
-                    </div>
-                    <h3 className="text-2xl font-semibold text-foreground">
-                      {experience.name}
-                    </h3>
-                    <p className="max-w-[60ch] text-base leading-8 text-muted-foreground">
-                      {experience.summary}
-                    </p>
+        <div className="career-list">
+          {experiences.map((experience) => (
+            <article key={experience.id}>
+              <p className="career-period">{experience.period}</p>
+
+              <div className="career-entry">
+                <header className="career-entry-heading">
+                  <div>
+                    <h3>{experience.name}</h3>
+                    <p className="career-role">{experience.headline}</p>
                   </div>
+                  <p className="career-domain">{experience.role}</p>
+                </header>
 
-                  <ul className="max-w-[62ch] space-y-3 text-sm leading-7 text-muted-foreground">
-                    {experience.highlights.map((highlight) => (
-                      <li key={highlight} className="flex gap-3">
-                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-foreground/70" />
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <p className="career-summary">{experience.summary}</p>
 
-                  <TagList items={experience.techStack} />
-                </div>
-
-                <aside className="space-y-5 rounded-[1.75rem] border border-border/70 bg-secondary/35 p-6">
-                  <div className="space-y-2">
-                    <p className="text-sm font-semibold text-foreground">역할</p>
-                    <p className="text-sm leading-6 text-muted-foreground">
-                      {experience.role}
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-sm font-semibold text-foreground">협업</p>
-                    <ul className="space-y-2 text-sm leading-6 text-muted-foreground">
-                      {experience.collaboration.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  {experience.note ? (
-                    <p className="text-xs leading-5 text-muted-foreground">
-                      {experience.note}
-                    </p>
-                  ) : null}
-                </aside>
-              </div>
-
-              <div className="space-y-4">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                  주요 작업
-                </p>
-                <div className="grid gap-4 xl:grid-cols-2">
-                  {experience.subItems.map((item) => (
-                    <div
-                      key={item.id}
-                      className="border-l border-border/80 pl-5 sm:pl-6"
-                    >
-                      <div className="space-y-3">
-                        <div>
-                          <h4 className="text-lg font-semibold text-foreground">
-                            {item.title}
-                          </h4>
-                          <p className="mt-1 max-w-[58ch] text-sm leading-6 text-muted-foreground">
-                            {item.summary}
-                          </p>
-                        </div>
-                        <ul className="max-w-[60ch] space-y-2 text-sm leading-7 text-muted-foreground">
-                          {item.highlights.map((highlight) => (
-                            <li key={highlight} className="flex gap-3">
-                              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-foreground/70" />
-                              <span>{highlight}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        {item.note ? (
-                          <p className="text-xs leading-5 text-muted-foreground">
-                            {item.note}
-                          </p>
-                        ) : null}
-                      </div>
-                    </div>
+                <ol className="career-workstreams" aria-label={`${experience.name} 주요 업무`}>
+                  {experience.subItems.map((item, index) => (
+                    <li key={item.id}>
+                      <span className="career-work-index">{String(index + 1).padStart(2, "0")}</span>
+                      <h4>{item.title}</h4>
+                      <p>{item.summary}</p>
+                    </li>
                   ))}
+                </ol>
+
+                <div className="career-entry-meta">
+                  <p><span>협업</span>{experience.collaboration.join(" · ")}</p>
+                  <p><span>기술</span>{experience.techStack.join(" · ")}</p>
                 </div>
               </div>
-
-              <ActivityHighlightsList items={relatedActivities} />
             </article>
-          );
-        })}
+          ))}
+        </div>
       </div>
-    </SectionShell>
+    </section>
   );
 }
