@@ -1,8 +1,7 @@
-import type { ComponentType, CSSProperties } from "react";
+import type { ComponentType } from "react";
 
+import { LateResponseTimeline, LayerToggleDemo } from "@/components/portfolio/case-interactions";
 import type { CaseDiagramKind } from "@/content/case-studies";
-
-type GridPlacement = CSSProperties & { "--gc"?: number; "--gr"?: number };
 
 const sdkLayers = [
   { name: "고객사 웹 앱", external: true, items: [{ text: "채팅 화면 · 채널 목록 · 알림" }] },
@@ -23,16 +22,6 @@ function SdkLayers() {
   </figure>;
 }
 
-const timelineLanes = ["REST 조회", "실시간 이벤트", "화면 상태"];
-const timelineEvents = [
-  { id: "request", step: "①", lane: 0, col: 1, title: "과거 페이지 요청", note: "#42 수정 전(v1) 포함" },
-  { id: "event", step: "②", lane: 1, col: 2, title: "#42 수정 이벤트(v2) 도착" },
-  { id: "apply", lane: 2, col: 2, title: "#42 → v2 반영", tone: "state" },
-  { id: "late", step: "③", lane: 0, col: 3, title: "늦게 도착한 응답(#42 v1)", note: "ID·수정 시각 비교 → 더 오래된 값 무시", tone: "late" },
-  { id: "keep", lane: 2, col: 3, title: "#42는 v2 유지", tone: "keep" },
-  { id: "cancel", step: "④", lane: 0, col: 4, title: "채널 접근 불가 확인", note: "진행 중 요청 취소 · 이후 응답 폐기", tone: "cancel" },
-];
-
 const errorPolicies = [
   { situation: "인증 만료", action: "토큰 갱신 제한 · 반복 갱신 방지", value: "1회" },
   { situation: "서버 오류(5xx)", action: "재시도해도 안전한 요청만", value: "최대 3회" },
@@ -41,16 +30,7 @@ const errorPolicies = [
 
 function LateResponse() {
   return <div className="case-diagram">
-    <figure className="timeline-diagram">
-      <div className="timeline-grid">
-        {timelineLanes.map((lane, index) => <span key={lane} className="timeline-lane" style={{ "--gr": index + 1 } as GridPlacement}>{lane}</span>)}
-        {timelineLanes.map((lane, index) => <i key={`${lane}-track`} className={`timeline-track track-${index}`} style={{ "--gr": index + 1 } as GridPlacement} aria-hidden="true" />)}
-        {timelineEvents.map(event => <div key={event.id} className={`timeline-event tone-${event.tone ?? "default"}`} data-lane={timelineLanes[event.lane]} style={{ "--gc": event.col + 1, "--gr": event.lane + 1 } as GridPlacement}>
-          <strong>{event.step ? <b>{event.step}</b> : null}{event.title}</strong>{event.note ? <span>{event.note}</span> : null}
-        </div>)}
-      </div>
-      <figcaption>동작 원리를 설명하기 위한 예시</figcaption>
-    </figure>
+    <LateResponseTimeline />
     <div className="policy-block">
       <p className="diagram-label">오류별 재시도·종료 정책</p>
       <table className="policy-table">
@@ -99,6 +79,7 @@ function CssLayers() {
       <div className="layers-box tier-3"><strong>@layer reset</strong></div>
       <p className="layers-note">진입 HTML에서 순서 먼저 선언</p>
     </div>
+    <LayerToggleDemo />
   </div>;
 }
 

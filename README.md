@@ -22,7 +22,7 @@
 | --- | --- | --- | --- |
 | 1 | 첫 화면 | `intro-section.tsx` | `content/intro.ts` |
 | 2 | 01 경력 | `experience-section.tsx` | `content/experiences.ts` |
-| 3 | 02 실무 사례 · 03 개인 프로젝트 | `work-gallery.tsx`, `company-case.tsx`, `case-diagrams.tsx` | `content/case-studies.ts`, `content/projects.ts`, `content/media.ts`, `content/links.ts` |
+| 3 | 02 실무 사례 · 03 개인 프로젝트 | `work-gallery.tsx`, `company-case.tsx`, `case-diagrams.tsx`, `case-interactions.tsx` | `content/case-studies.ts`, `content/projects.ts`, `content/media.ts`, `content/links.ts` |
 | 4 | 04 학력·자격 | `background-section.tsx` | `content/education.ts`, `content/timeline.ts` |
 | 5 | 연락 | `contact-section.tsx` | `content/contact.ts` |
 
@@ -36,7 +36,7 @@
 
 - [content/intro.ts](content/intro.ts): 이름, 역할, 대표 문구, 소개 한 줄, 성과 카드(`highlights`), 첫 화면 링크
 - [content/experiences.ts](content/experiences.ts): 회사별 경력과 프로젝트 단위 업무(`subItems`: 제목·선택 `period`·결과 한 줄 `summary`·세부 `highlights`)
-- [content/case-studies.ts](content/case-studies.ts): 실무 사례 카드(제목·요약·그림 종류 `diagram`·결과·상세 항목)와 별숲 사례. 그림 안의 문구는 [components/portfolio/case-diagrams.tsx](components/portfolio/case-diagrams.tsx)에 있습니다.
+- [content/case-studies.ts](content/case-studies.ts): 실무 사례 카드(제목·요약·그림 종류 `diagram`·결과·상세 항목)와 별숲 사례. 그림 안의 문구는 [components/portfolio/case-diagrams.tsx](components/portfolio/case-diagrams.tsx)에, 경합 타임라인 단계 재생과 CSS layer 전후 토글 예시는 [components/portfolio/case-interactions.tsx](components/portfolio/case-interactions.tsx)에 있습니다. 헤더의 현재 섹션 표시와 진행 바는 [components/layout/site-header.tsx](components/layout/site-header.tsx)가 맡습니다.
 - [content/projects.ts](content/projects.ts): 대표·기타 개인 프로젝트
 - [content/education.ts](content/education.ts), [content/timeline.ts](content/timeline.ts): 학력·자격·어학과 전체 이력
 - [content/site-metadata.ts](content/site-metadata.ts): 사이트 제목·설명
