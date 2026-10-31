@@ -1,7 +1,7 @@
 # 유종석 포트폴리오
 
 프론트엔드 개발자 유종석의 단일 페이지 포트폴리오입니다.  
-제네시스네스트(Chatplanet Messaging Web SDK·Admin Web V2·채팅 웹, 기업 고객의 사내 AI 검색·챗봇 웹)와 카카오페이 마케팅 어드민 경력, 실무 사례 2개, 개인 프로젝트, 학력·자격, 연락처를 한 흐름으로 보여줍니다.
+제네시스네스트(Chatplanet Messaging Web SDK·Admin Web V2·채팅 웹, 기업 고객의 사내 AI 검색·챗봇 웹)와 카카오페이 마케팅 어드민 경력, 그림으로 푼 실무 사례 5개, 개인 프로젝트, 학력·자격, 연락처를 한 흐름으로 보여줍니다.
 
 배포 주소: `https://portfolio.joyoo-blog.com/`
 
@@ -22,7 +22,7 @@
 | --- | --- | --- | --- |
 | 1 | 첫 화면 | `intro-section.tsx` | `content/intro.ts` |
 | 2 | 01 경력 | `experience-section.tsx` | `content/experiences.ts` |
-| 3 | 02 실무 사례 · 03 개인 프로젝트 | `work-gallery.tsx`, `company-case.tsx` | `content/case-studies.ts`, `content/projects.ts`, `content/media.ts`, `content/links.ts` |
+| 3 | 02 실무 사례 · 03 개인 프로젝트 | `work-gallery.tsx`, `company-case.tsx`, `case-diagrams.tsx` | `content/case-studies.ts`, `content/projects.ts`, `content/media.ts`, `content/links.ts` |
 | 4 | 04 학력·자격 | `background-section.tsx` | `content/education.ts`, `content/timeline.ts` |
 | 5 | 연락 | `contact-section.tsx` | `content/contact.ts` |
 
@@ -34,15 +34,17 @@
 
 화면 문구는 컴포넌트보다 `content/`를 먼저 수정합니다.
 
-- [content/intro.ts](content/intro.ts): 이름, 역할, 대표 문구, 소개 줄
-- [content/experiences.ts](content/experiences.ts): 회사별 경력과 프로젝트 단위 업무(`subItems`, 선택 `period`)
-- [content/case-studies.ts](content/case-studies.ts): 실무 사례 카드(문제·선택·검증·상세 항목)와 별숲 사례
+- [content/intro.ts](content/intro.ts): 이름, 역할, 대표 문구, 소개 한 줄, 성과 카드(`highlights`), 첫 화면 링크
+- [content/experiences.ts](content/experiences.ts): 회사별 경력과 프로젝트 단위 업무(`subItems`: 제목·선택 `period`·결과 한 줄 `summary`·세부 `highlights`)
+- [content/case-studies.ts](content/case-studies.ts): 실무 사례 카드(제목·요약·그림 종류 `diagram`·결과·상세 항목)와 별숲 사례. 그림 안의 문구는 [components/portfolio/case-diagrams.tsx](components/portfolio/case-diagrams.tsx)에 있습니다.
 - [content/projects.ts](content/projects.ts): 대표·기타 개인 프로젝트
 - [content/education.ts](content/education.ts), [content/timeline.ts](content/timeline.ts): 학력·자격·어학과 전체 이력
 - [content/site-metadata.ts](content/site-metadata.ts): 사이트 제목·설명
 - [content/types.ts](content/types.ts): 전체 콘텐츠 타입
 
-문구 형식(명사형 카피, `·`/`/`/`→` 사용, 기간 표기, 타이포그래피 토큰)은 [CONTENT_STYLE.md](CONTENT_STYLE.md)를 따릅니다. 회사 업무는 공개 가능한 제품명과 일반화한 표현만 사용하고, 팀 작업과 개인 기여를 구분해 적습니다.
+문구 형식(명사형 카피, `·`/`/`/`→` 사용, 기간 표기, 타이포그래피 토큰)은 [CONTENT_STYLE.md](CONTENT_STYLE.md)를 따릅니다. 회사 업무는 공개 가능한 제품명과 일반화한 표현만 사용하고, 팀 작업과 개인 기여를 구분해 적습니다. 회사 화면 캡처는 쓰지 않고 HTML/CSS 그림으로 설명합니다.
+
+글자 색은 `--text-body`·`--text-muted` 토큰을 써서 베이지 배경에서도 WCAG AA(4.5:1 이상)를 지키고, 기간 표기 등 고정폭 글꼴은 `--font-mono`(한글은 Pretendard로 대체)를 씁니다.
 
 ## 디렉터리 구조
 

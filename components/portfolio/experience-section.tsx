@@ -29,11 +29,18 @@ export function ExperienceSection() {
                   {experience.subItems.map((item, index) => (
                     <li key={item.id}>
                       <span className="career-work-index">{String(index + 1).padStart(2, "0")}</span>
-                      <div>
+                      <div className="career-work-head">
                         <h4>{item.title}</h4>
                         {item.period ? <p className="career-work-period">{item.period}</p> : null}
                       </div>
-                      <p>{item.summary}</p>
+                      <div className="career-work-body">
+                        <p className="career-work-result">{item.summary}</p>
+                        {item.highlights.length ? (
+                          <ul className="career-work-details">
+                            {item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+                          </ul>
+                        ) : null}
+                      </div>
                     </li>
                   ))}
                 </ol>

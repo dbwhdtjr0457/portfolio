@@ -10,7 +10,7 @@ import { featuredProject, featuredProjectMedia, otherProjects, projectPreviewMed
 export function WorkGallery() {
   return <section id="projects" aria-labelledby="work-title" className="curated-work">
     <div className="container">
-      <Reveal><header className="work-section-heading"><div className="work-heading-title"><p className="section-index" aria-hidden="true">02</p><h2 id="work-title">실무 사례</h2></div><p className="section-scope"><span>Chatplanet · 메시지 병합 / 복구 경합</span><span>카카오페이 · 메시지 작성 / 예약 관리</span></p></header></Reveal>
+      <Reveal><header className="work-section-heading"><div className="work-heading-title"><p className="section-index" aria-hidden="true">02</p><h2 id="work-title">실무 사례</h2></div><p className="section-scope"><span>Chatplanet · SDK 구조 / 상태 정합성 / 관리자 웹 검증</span><span>AI 검색·챗봇 웹 · CSS 우선순위</span><span>카카오페이 · 메시지 작성 / 예약 관리</span></p></header></Reveal>
       <div className="company-case-list"><CompanyCases /></div>
 
       <div className="personal-work">

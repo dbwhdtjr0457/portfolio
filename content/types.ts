@@ -36,12 +36,20 @@ export type CtaItem = {
   variant: CtaVariant;
 };
 
+export type IntroHighlight = {
+  id: string;
+  label: string;
+  value: string;
+  detail: string;
+};
+
 export type IntroContent = {
   name: string;
   role: string;
   headline: [string, string];
-  description: string[];
-  primaryLinkIds: string[];
+  topline: string;
+  summary: string;
+  highlights: IntroHighlight[];
   ctas: CtaItem[];
 };
 
@@ -49,6 +57,7 @@ export type ContactContent = {
   title: string;
   description: string;
   email: string;
+  github: string;
   note?: string;
 };
 

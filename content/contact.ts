@@ -5,5 +5,6 @@ export const contactContent: ContactContent = {
   description:
     "이메일 문의",
   email: "dbwhdtjr0457@gmail.com",
+  github: "https://github.com/dbwhdtjr0457",
   note: "작업 관련 질문 포함",
 };
