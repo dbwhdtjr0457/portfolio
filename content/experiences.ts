@@ -5,70 +5,82 @@ export const experiences: Experience[] = [
   "id": "genesisnest",
   "kind": "experience",
   "name": "제네시스네스트",
-  "headline": "Chatplanet 프론트엔드 개발",
-  "role": "관리자 웹 · 메시징 Web SDK 개발",
+  "headline": "프론트엔드 개발",
+  "role": "Chatplanet · AI 검색·챗봇 웹",
   "period": "2026.06 — 현재",
-  "summary": "관리자 화면·인증·조회 · 메시지 병합·복구 · 테스트·Storybook · 실행 환경 정렬",
-  "description": "메시지 중복·지연 응답 처리 · 관리자 인증·조회 상태",
+  "summary": "Messaging Web SDK 신규 구축·beta 전달 · Admin Web V2 초기 구축·운영 전환 참여 · AI 검색·챗봇 웹 화면 기반",
+  "description": "채팅 웹 공통 기반 → Admin Web V2 → Messaging Web SDK → 기업 고객의 사내 AI 검색·챗봇 웹",
   "highlights": [
-    "메시지 ID·수정 시각 기준 병합 · 취소 이후 지연 응답 제외",
-    "HttpOnly 쿠키·Next.js BFF 전환 · 회귀 테스트 195개 · CI 연결",
-    "Storybook 36개 · MSW API 재현 · 모바일 화면 넘침 수정"
+    "Messaging Web SDK 기반 모듈 → 공개 API · 메시지 병합·복구 · beta 전달",
+    "Admin Web V2 초기 구조·운영 핵심 화면 · 회귀 테스트 195개 · 1차 운영 전환 참여",
+    "AI 검색·챗봇 웹 디자인 토큰·공통 컴포넌트"
   ],
   "techStack": [
-    "React",
     "TypeScript",
+    "React",
     "Next.js",
+    "React Query",
+    "WebSocket(STOMP)",
     "Vitest",
     "Testing Library",
     "Storybook",
-    "MSW"
+    "MSW",
+    "CSS Cascade Layers"
   ],
   "links": [],
   "collaboration": [
-    "FE·BE와 API 및 세션 동작 조율",
-    "리뷰 조건 재현·회귀 테스트 반영",
+    "API 계약·오류 처리·CI 중심 동료 PR 리뷰",
+    "리뷰 지적 재현 → 종료 조건·테스트 반영",
     "실행 브랜치·테스트 방법·배포 상태 공유"
   ],
   "subItems": [
     {
-      "id": "gn-admin",
-      "title": "Chatplanet 관리자 웹",
-      "summary": "초기 구조 · 로그인·앱 선택·정보·금칙어·메시지 관리 · HttpOnly 쿠키·BFF 인증",
-      "highlights": [
-        "로그인·앱 선택·앱 정보·금칙어·메시지 화면 · 에러·세션 처리",
-        "localStorage JWT → HttpOnly 쿠키 + Next.js BFF",
-        "입력 중·적용된 검색 조건 분리 · 취소·응답 순서·재시도"
-      ]
-    },
-    {
       "id": "gn-sdk",
-      "title": "메시징 Web SDK",
-      "summary": "양방향 메시지 조회·병합 · 채널 복구 · 오류별 재시도·세션 종료",
+      "title": "Chatplanet Messaging Web SDK",
+      "period": "2026.08 — 2026.09",
+      "summary": "기반 모듈 → Channel·Message 공개 API · 메시지 병합·복구 · 오류별 재시도·종료 · beta 전달",
       "highlights": [
-        "메시지 ID·수정 시각 기준 병합 · 취소·dispose 이후 지연 응답 제외",
-        "채널 복구 경합 · 실패 후 커서 보존",
-        "세션 폐기 이후 반복 재연결 재현 → 해당 오류에서 연결 종료"
+        "REST Transport·Auth·Client 기반 → Channel·Message 공개 API",
+        "메시지 ID·수정 시각 기준 양방향 병합 · 취소·폐기 이후 응답 제외 · 병합 테스트 8개",
+        "인증 갱신 1회 · 안전한 요청의 서버 오류 재시도 최대 3회 · 세션 폐기 재연결 순환 재현 → 자동 재연결 중단",
+        "GitHub Packages beta 배포 · 연동 문서·패키지 설치·검증 절차"
       ]
     },
     {
-      "id": "gn-quality",
-      "title": "자동 검증 환경",
-      "summary": "회귀 테스트 195개·CI · Storybook 스토리 파일 36개·MSW · UI 오류 재현",
+      "id": "gn-admin",
+      "title": "Chatplanet Admin Web V2",
+      "period": "2026.07 — 2026.08",
+      "summary": "초기 아키텍처·운영 핵심 화면 · 적용 조건 분리·재시도 · 회귀 테스트 195개·CI · 1차 운영 전환 참여",
       "highlights": [
-        "Vitest·Testing Library 회귀 테스트 195개 · CI 연결",
-        "Storybook + MSW API · 모바일 너비 재현 · Chromium 확인",
-        "Node 20→24 · 로컬·CI·Docker 버전 정렬"
+        "기능 단위 초기 구조 · 로그인·앱 선택·앱 정보·금칙어·관리자·메시지 관리 · 공통 오류·세션 만료 처리",
+        "편집 중·적용된 필터 분리 · 커서 이어보기 요청 취소·순서 검증 · 실패 당시 조건 재시도",
+        "Vitest·Testing Library 회귀 테스트 195개 · CI job 실행",
+        "Node 20→24·Next.js 패치 · 로컬·CI·Docker 버전 정렬",
+        "React Query 적용·개발 환경 배포·1차 운영 전환 참여"
       ]
     },
     {
-      "id": "gn-platform",
-      "title": "개발·배포 환경",
-      "summary": "Node 20→24 로컬·CI·Docker 정렬 · ARM64 전환 전후 병목·환경 영향 검토 · 전체 배포 약 23→7분 측정",
+      "id": "gn-webview",
+      "title": "Chatplanet 채팅 웹(WebView)",
+      "period": "2026.06 — 2026.07",
+      "summary": "공통 오류 처리·모바일 레이아웃 · Storybook 스토리 파일 36개·MSW · interaction 테스트 CI · 모바일 넘침 회귀 감지",
       "highlights": [
-        "Node·Next.js 업그레이드 · 타입 검사·테스트·프로덕션·Docker 빌드 확인",
-        "ARM64 러너 전환의 빌드 병목·환경 영향 검토",
-        "동료 구현 전후 이미지 빌드·푸시 및 전체 배포 시간 측정"
+        "공통 오류 처리 · 모바일 viewport 레이아웃 · 환경별 빌드·CI 기본 설정 · 프론트엔드 컨벤션 문서",
+        "공통 컴포넌트·오류·공지 화면 스토리 파일 36개 · MSW API 대역 · interaction 테스트 CI",
+        "iPhone SE 크기 리스트 넘침 수정 → 같은 조합 story 재현·회귀 감지",
+        "기존 웹 API 응답 타입 정리 · any·lint 오류 축소"
+      ]
+    },
+    {
+      "id": "gn-ai-search",
+      "title": "기업 고객의 사내 AI 검색·챗봇 웹",
+      "period": "2026.10 — 현재",
+      "summary": "디자인 토큰 색상 59·글자 스타일 15 · 키보드 조작 공통 컴포넌트 · CSS layer 우선순위 정리 · 화면 품질 리뷰",
+      "highlights": [
+        "Figma 가이드 색상 59개·글자 스타일 15개 → 역할·크기 규칙 토큰 · Typography 컴포넌트·확인 페이지",
+        "제어형 탭 컴포넌트 · 화살표·Home·End 키 조작 · 포커스 표시",
+        "외부 디자인 시스템 전역 CSS 우선 적용 확인 → reset < 외부 디자인 시스템 < 자체 디자인 시스템 layer 순서 선언",
+        "동료 PR 12건 인라인 코멘트 32개 · Figma 차이·layout shift·빈 질문 전송·하드코딩 색상"
       ]
     }
   ]

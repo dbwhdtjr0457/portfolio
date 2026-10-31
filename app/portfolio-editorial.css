@@ -989,6 +989,14 @@ details[data-expanded="true"] > summary > span {
   line-height: var(--leading-compact);
 }
 
+.career-workstreams .career-work-period {
+  margin-top: 4px;
+  color: #686c65;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: var(--type-label);
+  font-weight: var(--weight-medium);
+}
+
 .career-entry-meta {
   display: grid;
   gap: 10px;
@@ -1485,6 +1493,15 @@ body > footer a:hover {
 
   .career-list h3 {
     margin-top: 7px;
+  }
+
+  .career-workstreams li {
+    grid-template-columns: 38px minmax(0, 1fr);
+    row-gap: 8px;
+  }
+
+  .career-workstreams li > p {
+    grid-column: 2;
   }
 
   .background-section {

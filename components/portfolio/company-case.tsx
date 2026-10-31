@@ -31,9 +31,7 @@ export function CompanyCases() {
       <header className="company-case-heading"><span className="case-number">CASE 0{index + 1}</span><p>{item.label}</p><h3>{item.company}</h3><dl><div><dt>역할</dt><dd>{item.role}</dd></div><div><dt>기간</dt><dd>{item.period}</dd></div></dl></header>
       <div className="company-case-story"><div className="case-scope"><span>담당 범위</span><p>{item.scope}</p></div><p className="case-feature-label">대표 구현</p><h4>{item.title}</h4><p className="case-brief">{item.brief}</p>{item.id === "chatplanet" ? <MessageSequence /> : <CampaignContributions />}
         <p className="case-result"><span>검증</span>{item.result}</p>
-        <AnimatedDetails label="구현과 검증 보기" className="work-details case-details"><div className="case-detail-notes">{item.id === "chatplanet" ? <>
-          <p><span>자동 테스트</span>Vitest·Testing Library 195개 · CI 연결</p><p><span>리뷰 반영</span>세션 폐기 오류 재연결 대상 제외 · 반복 재연결 직접 재현 → 연결 종료</p><p><span>공통 UI</span>Storybook 36개 · MSW API 응답 재현</p><p><span>협업</span>FE·BE API·세션 동작 조율 · 동료 PR 리뷰</p>
-        </> : <><p><span>프로토타입</span>동작 캘린더 선공유 · 화면 기반 요구사항 합의</p><p><span>API 전환</span>GET→POST 기존 호출부 탐색 · 동시 수정</p><p><span>협업</span>FE·BE·PM 요구사항 조율 · QA 조건 확인</p></>}<p className="case-tech">{item.tags}</p></div></AnimatedDetails>
+        <AnimatedDetails label="구현과 검증 보기" className="work-details case-details"><div className="case-detail-notes">{item.details.map(detail => <p key={detail.label}><span>{detail.label}</span>{detail.text}</p>)}<p className="case-tech">{item.tags}</p></div></AnimatedDetails>
       </div>
     </article>
   </Reveal>)}</>;

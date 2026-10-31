@@ -30,5 +30,5 @@ export const timelineItems: TimelineItem[] = [
     period: "2025.09",
     title: "정보처리기사 취득",
   },
-  { id: "timeline-genesisnest", period: "2026.06 — 현재", title: "제네시스네스트 Chatplanet 개발", detail: "관리자 화면, 인증, 메시징 Web SDK, 자동 검증 환경 개발" },
+  { id: "timeline-genesisnest", period: "2026.06 — 현재", title: "제네시스네스트 프론트엔드 개발", detail: "Chatplanet 채팅 웹·Admin Web V2·Messaging Web SDK → 기업 고객의 사내 AI 검색·챗봇 웹" },
 ];

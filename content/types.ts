@@ -61,6 +61,7 @@ export type SummaryItem = {
 export type EntrySubItem = {
   id: string;
   title: string;
+  period?: string;
   summary: string;
   highlights: string[];
   note?: string;
